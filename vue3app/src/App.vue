@@ -12,6 +12,7 @@ import { sayHello } from "./utils";
 export default defineComponent({
   setup() {
     const sayHelloFromVueFile = () => {
+      debugger
       console.log("Hello from Vue file");
     };
     return { sayHelloFromVueFile, sayHello };

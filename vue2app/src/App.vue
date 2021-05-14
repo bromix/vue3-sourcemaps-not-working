@@ -13,6 +13,7 @@ import { sayHello } from "./utils";
 export default Vue.extend({
   methods: {
     sayHelloFromVueFile() {
+      debugger
       console.log("Hello from Vue file");
     },
     sayHelloFromTsFile() {
