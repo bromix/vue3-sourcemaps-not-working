@@ -1,10 +1,24 @@
 <template>
   <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <button @click="sayHelloFromVueFile()">Breakpoint in vue file</button>
+    <button @click="sayHello()">Breakpoint in ts file</button>
   </div>
-  <router-view />
 </template>
+
+<script lang="ts">
+import { defineComponent } from "vue";
+import { sayHello } from "./utils";
+
+export default defineComponent({
+  setup() {
+    const sayHelloFromVueFile = () => {
+      console.log("Hello from Vue file");
+    };
+    return { sayHelloFromVueFile, sayHello };
+  },
+});
+</script>
+
 
 <style lang="scss">
 #app {
