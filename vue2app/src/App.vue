@@ -1,12 +1,26 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <button @click="sayHelloFromVueFile()">Breakpoint in vue file</button>
+      <button @click="sayHelloFromTsFile()">Breakpoint in ts file</button>
     </div>
-    <router-view />
   </div>
 </template>
+
+<script lang="ts">
+import Vue from "vue";
+import { sayHello } from "./utils";
+export default Vue.extend({
+  methods: {
+    sayHelloFromVueFile() {
+      console.log("Hello from Vue file");
+    },
+    sayHelloFromTsFile() {
+      sayHello();
+    },
+  },
+});
+</script>
 
 <style lang="scss">
 #app {
